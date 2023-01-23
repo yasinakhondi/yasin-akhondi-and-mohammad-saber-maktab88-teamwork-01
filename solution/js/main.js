@@ -13,16 +13,17 @@ for (let i = 0; i < array.length; i++) {
     select.append(`<option>${array[i]['name']}</option>`);
 }
 
+
 function showResult() {
-    indexSelect = countryArrayNmae.indexOf(select.val())
+    indexSelect = countryArrayNames.indexOf(select.val())
     NativeName.text(array[indexSelect]["name"]);
     Capital.text(array[indexSelect]["capital"]);
     Region.text(array[indexSelect]["region"]);
     Population.text(array[indexSelect]["population"]);
     Languages.text(Object.values(array[indexSelect]["languages"])[0]);
     TimeZone.text(Object.values(array[indexSelect]["timezones"])[0]);
-    flag.attr('src',(array[indexSelect]["flags"]));
-    maps.attr('src',(array[indexSelect]["maps"]));
+    flag.attr('src', (array[indexSelect]["flags"]));
+    maps.attr('src', (array[indexSelect]["maps"]));
 }
 
 showResult();

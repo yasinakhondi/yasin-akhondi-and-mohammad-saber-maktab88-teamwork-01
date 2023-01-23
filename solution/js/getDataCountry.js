@@ -1,4 +1,4 @@
-let countryArrayNmae = [];
+let countryArrayNames = [];
 let array = [];
 
 $.ajax({
@@ -6,9 +6,9 @@ $.ajax({
     type: "get",
     async: false,
     success: function (response) {
-        console.log(response[0])
+        // console.log(response[0])
         for (let i = 0; i < response.length; i++) {
-            countryArrayNmae.push(response[i]["name"]["common"]);
+            countryArrayNames.push(response[i]["name"]["common"]);
             array.push(
                 {
                     'name': response[i]["name"]["common"],
@@ -238,4 +238,4 @@ $.ajax({
 //     }
 // }
 
-console.log(array)
+// console.log(array)
