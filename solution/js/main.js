@@ -25,7 +25,7 @@ function showResult() {
     Languages.text(Object.values(array[indexSelect]["languages"])[0]);
     TimeZone.text(Object.values(array[indexSelect]["timezones"])[0]);
     flag.attr('src', (array[indexSelect]["flags"]));
-    maps.attr('src',`https://maps.google.com/maps?width=100%&height=500&hl=en&q=${array[indexSelect]["name"]} (Title)&ie=UTF8&t=&z=10&iwloc=B&output=embed`);
+    maps.attr('src', `https://maps.google.com/maps?width=100%&height=500&hl=en&q=${array[indexSelect]["name"]} (Title)&ie=UTF8&t=&z=10&iwloc=B&output=embed`);
 }
 
 showResult();
