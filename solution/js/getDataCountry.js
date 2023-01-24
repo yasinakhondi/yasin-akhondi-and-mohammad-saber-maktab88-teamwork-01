@@ -7,12 +7,11 @@ $.ajax({
     type: "get",
     async: false,
     success: function (response) {
-        // console.log(response[0])
         for (let i = 0; i < response.length; i++) {
             countryArrayNames.push(response[i]["name"]["common"]);
             array.push(
                 {
-                    'name': response[i]["name"]["common"],
+                    'name': response[i].name.common,
                     'capital': response[i]["capital"],
                     'maps': response[i]["maps"]["googleMaps"],
                     'population': response[i]["population"],
@@ -20,7 +19,8 @@ $.ajax({
                     'languages': response[i]["languages"],
                     'timezones': response[i]["timezones"],
                     'region': response[i]["region"],
-                    'callingCodes': undefined
+                    'callingCodes': undefined,
+                    'latlng': response[i]["latlng"]
                 }
             );
         }
@@ -38,13 +38,4 @@ $.ajax({
             }
         }
     },
-});
-
-$.ajax({
-    url: `https://api.openweathermap.org/data/2.5/weather?lat=${}&lon=${}&appid=963bc7a1945cf0f1c0aa271165ee890b`,
-    type: "get",
-    async: false,
-    success: function (response) {
-        console.log(response.data);
-    }
 });
