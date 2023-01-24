@@ -20,7 +20,7 @@ $.ajax({
                     'languages': response[i]["languages"],
                     'timezones': response[i]["timezones"],
                     'region': response[i]["region"],
-                    'callingCodes' : undefined
+                    'callingCodes': undefined
                 }
             );
         }
@@ -33,10 +33,18 @@ $.ajax({
     async: false,
     success: function (response) {
         for (let i = 0; i < response.length; i++) {
-            if (countryArrayNames.indexOf(response[i]["name"]) > 0 ){
+            if (countryArrayNames.indexOf(response[i]["name"]) > 0) {
                 array[countryArrayNames.indexOf(response[i]["name"])]['callingCodes'] = response[i]["callingCodes"]
             }
         }
     },
 });
 
+$.ajax({
+    url: `https://api.openweathermap.org/data/2.5/weather?lat=${}&lon=${}&appid=963bc7a1945cf0f1c0aa271165ee890b`,
+    type: "get",
+    async: false,
+    success: function (response) {
+        console.log(response.data);
+    }
+});
