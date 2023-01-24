@@ -15,7 +15,6 @@ function getweather([lat, lng]) {
         async: false,
         success: function (response) {
             weather = { ...response }
-
         }
     });
     renderWeather()
@@ -26,5 +25,6 @@ function renderWeather() {
     temperature.text(weather.main.temp)
     Humidity.text(weather.main.humidity)
     Visibility.text(weather.visibility)
+    imageContainer.html(`<img src="http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png" alt="">`)
 }
 

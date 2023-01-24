@@ -9,7 +9,7 @@ let Languages = $('#Languages');
 let TimeZone = $('#TimeZone');
 let maps = $('#gmap_canvas');
 let flag = $('#flag');
-
+let imageContainer = $("#imageContainer")
 
 
 for (let i = 0; i < array.length; i++) {
@@ -31,6 +31,7 @@ function showResult() {
     flag.attr('src', (array[indexSelect]["flags"]));
     maps.attr('src', `https://maps.google.com/maps?width=100%&height=500&hl=en&q=${array[indexSelect]["name"]} (Title)&ie=UTF8&t=&z=10&iwloc=B&output=embed`);
     getweather(array[indexSelect]["latlng"])
+
 }
 
 showResult();
